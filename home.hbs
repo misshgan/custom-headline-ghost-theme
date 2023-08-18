@@ -1,0 +1,96 @@
+{{!< default}}
+
+<main class="gh-main gh-outer">
+    <div class="gh-inner">
+		<section class="home-custom-block-1">
+			<div class="home-custom-block-1__left">
+				<h1 class="home-custom-block-1__title">{{@custom.title_for_first_block_on_the_home_page}}</h1>
+				<p class="home-custom-block-1__description">{{@custom.subtitle_for_first_block_on_the_home_page}}</p>
+				<a href="{{@site.url}}/join-us/" class="home-custom-block-1__link">Join Us</a>
+			</div>
+			<div class="home-custom-block-1__right">
+				{{#if @custom.image_for_first_block_on_the_home_page}}
+					<img src={{@custom.image_for_first_block_on_the_home_page}} alt="ACT Climate Labs photo">
+				{{else}}
+					<img src={{asset "assets/images/image002.png"}} alt="ACT Climate Labs photo">
+				{{/if}}
+			</div>
+		</section>
+
+		<section class="home-custom-block-2">
+			<div class="home-custom-block-2__left">
+				{{#if @custom.image_for_second_block_on_the_home_page}}
+					<img src={{@custom.image_for_second_block_on_the_home_page}} alt="ACT Climate Labs photo">
+				{{else}}
+					<img src={{asset "assets/images/image-12.png"}} alt="ACT Climate Labs photo">
+				{{/if}}
+			</div>
+			<div class="home-custom-block-2__right">
+				<p class="home-custom-block-2__description">{{@custom.text_for_second_block_on_the_home_page}}</p>
+				<a href="{{@site.url}}/about/" class="home-custom-block-2__link">more about us ></a>
+			</div>
+		</section>
+
+        {{!-- <section class="gh-topic gh-topic-grid">
+            <h2 class="gh-topic-name">
+                {{#match pagination.pages ">" 1}}
+                    <a href="{{@site.url}}/page/2">Latest</a>
+                {{else}}
+                    Latest
+                {{/match}}
+            </h2>
+
+            <div class="gh-topic-content">
+                {{#get "posts" include="authors" limit="7"}}
+                    {{#foreach posts}}
+                        {{> "loop-grid"}}
+                    {{/foreach}}
+                {{/get}}
+            </div>
+
+            <footer class="gh-topic-footer">
+                {{#match pagination.pages ">" 1}}
+                    <a class="gh-topic-link" href="{{@site.url}}/page/2">Show more {{> "icons/arrow"}}</a>
+                {{/match}}
+            </footer>
+        </section> --}}
+
+        {{#if @custom.enter_tag_slugs_for_primary_sections}}
+            {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_primary_sections}}]"}}
+                {{#foreach tags}}
+                    {{> "topic-grid"}}
+                {{/foreach}}
+            {{/get}}
+
+            {{#if @custom.enter_tag_slugs_for_secondary_sections}}
+                {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_secondary_sections}}]"}}
+                    {{#if tags}}
+                        <div class="gh-topic-list">
+                            {{#foreach tags}}
+                                {{> "topic-minimal"}}
+                            {{/foreach}}
+                        </div>
+                    {{/if}}
+                {{/get}}
+            {{/if}}
+        {{else}}
+            {{#match posts.length ">" 1}}
+                {{#get "tags" include="count.posts" order="count.posts desc" limit="3"}}
+                    {{#foreach tags}}
+                        {{> "topic-grid"}}
+                    {{/foreach}}
+                {{/get}}
+
+                {{#get "tags" include="count.posts" order="count.posts desc"}}
+                    {{#if tags.[3]}}
+                        <div class="gh-topic-list">
+                            {{#foreach tags from="4" limit="3"}}
+                                {{> "topic-minimal"}}
+                            {{/foreach}}
+                        </div>
+                    {{/if}}
+                {{/get}}
+            {{/match}}
+        {{/if}}
+    </div>
+</main>
