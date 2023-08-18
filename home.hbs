@@ -2,13 +2,13 @@
 
 <main class="gh-main gh-outer">
     <div class="gh-inner">
-		<section class="home-custom-block-1">
-			<div class="home-custom-block-1__left">
-				<h1 class="home-custom-block-1__title">{{@custom.title_for_first_block_on_the_home_page}}</h1>
-				<p class="home-custom-block-1__description">{{@custom.subtitle_for_first_block_on_the_home_page}}</p>
-				<a href="{{@site.url}}/join-us/" class="home-custom-block-1__link">Join Us</a>
+		<section class="custom-hero-block">
+			<div class="custom-hero-block__left">
+				<h1 class="custom-hero-block__title">{{@custom.title_for_first_block_on_the_home_page}}</h1>
+				<p class="custom-hero-block__description">{{@custom.subtitle_for_first_block_on_the_home_page}}</p>
+				<a href="{{@site.url}}/join-us/" class="custom-hero-block__link">Join Us</a>
 			</div>
-			<div class="home-custom-block-1__right">
+			<div class="custom-hero-block__right">
 				{{#if @custom.image_for_first_block_on_the_home_page}}
 					<img src={{@custom.image_for_first_block_on_the_home_page}} alt="ACT Climate Labs photo">
 				{{else}}

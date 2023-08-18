@@ -676,9 +676,9 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 
 /* Custom CSS */ 
 
-/************************* BLOCK 1 */
+/************************* CUSTOM HERO */
 
-.home-custom-block-1 {
+.custom-hero-block {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -687,19 +687,19 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 	margin-bottom: 5rem;
 	border-bottom: 1px solid var(--color-light-gray);
 }
-.home-custom-block-1__left {
+.custom-hero-block__left {
 	width: 50%;
 	padding-right: 4rem;
 }
-.home-custom-block-1__title {
+.custom-hero-block__title {
 	margin-bottom: 2.4rem;
 	font-weight: 400;
     font-size: 4.8rem;
 }
-.home-custom-block-1__description {
+.custom-hero-block__description {
 	font-family: var(--font-serif);;
 }
-.home-custom-block-1__link {
+.custom-hero-block__link {
 	display: block;
 	margin-top: 3rem;
 	padding: 1rem 2.8rem;
@@ -710,18 +710,18 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 	text-align: center;
 	color: #fff;
 }
-.home-custom-block-1__right {
+.custom-hero-block__right {
 	width: 50%;
 	height: 25rem;
 }
-.home-custom-block-1__right img {
+.custom-hero-block__right img {
 	width: 100%;
 	height: 100%;
 
 	object-fit: cover;
 }
 
-/************************* BLOCK 2 */
+/************************* HOME BLOCK 2 */
 
 .home-custom-block-2 {
 	display: flex;
@@ -752,6 +752,42 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 .home-custom-block-2__link {
 	display: block;
 	margin-top: 40px;
+}
+
+/************************* MEMBER RESOURCES CARDS / CARDS */
+
+
+.m-resources-cards:not(:last-child) {
+	padding: 0 0 10rem;
+	border-bottom: 1px solid var(--color-light-gray);
+	margin-bottom: 5rem;
+}
+.m-resources-cards__title {
+	margin-bottom: 5rem;
+	font-weight: 400;
+    font-size: 3.2rem;
+}
+.tags-cards {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	row-gap: 50px;
+}
+.tags-card {
+	width: 32%;
+}
+.tags-card__image {
+	width: 100%;
+	margin-bottom: 3rem;
+}
+.tags-card__image img {
+	width: 100%;
+
+	object-fit: cover;
+}
+.tags-card__title {
+	font-weight: 400;
 }
 
 /* Media queries */

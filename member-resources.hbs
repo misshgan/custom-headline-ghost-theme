@@ -1,0 +1,66 @@
+{{!< default}}
+
+{{#page}}
+
+<main class="gh-main gh-outer">
+    <div class="gh-inner">
+
+		<section class="custom-hero-block">
+			<div class="custom-hero-block__left">
+				<h1 class="custom-hero-block__title">{{title}}</h1>
+				{{#if custom_excerpt}}
+					<p class="custom-hero-block__description">{{custom_excerpt}}</p>
+				{{else}}
+					<p class="custom-hero-block__description">Our member resources provide insights about our key audience (the Persuadables) and climate misinformation narratives aimed at them. Plus, we share our advertising expertise on successfully spurring climate action through creative campaigns.</p>
+				{{/if}}
+				<a href="{{@site.url}}/join-us/" class="custom-hero-block__link">Join Us</a>
+			</div>
+			<div class="custom-hero-block__right">
+				{{#if feature_image}}
+					<img src={{feature_image}} alt="{{title}} image">
+				{{else}}
+					<img src={{asset "assets/images/image002.png"}} alt="{{title}} image">
+				{{/if}}
+			</div>
+		</section>
+
+		<section class="m-resources-cards">
+			<h2 class="m-resources-cards__title">GUIDES</h2>
+			<div class="tags-cards">
+				{{#get "tags" filter="slug:[advertising, strategic, audience]"}}
+					{{#foreach tags}}
+						<div class="tags-card">
+							{{#if feature_image}}
+								<div class="tags-card__image">
+									<img src="{{feature_image}}" alt="{{name}} tag feature image">
+								</div>
+							{{/if}}
+							<h3 class="tags-card__title">{{name}}</h3>
+						</div>
+					{{/foreach}}
+				{{/get}}
+			</div>
+		</section>
+
+		<section class="m-resources-cards">
+			<h2 class="m-resources-cards__title">CLIMATE COMMUNICATION TOPICS</h2>
+			<div class="tags-cards">
+				{{#get "tags" filter="slug:[culture,energy,food,politics,transport,science]"}}
+					{{#foreach tags}}
+						<div class="tags-card">
+							{{#if feature_image}}
+								<div class="tags-card__image">
+									<img src="{{feature_image}}" alt="{{name}} tag feature image">
+								</div>
+							{{/if}}
+							<h3 class="tags-card__title">{{name}}</h3>
+						</div>
+					{{/foreach}}
+				{{/get}}
+			</div>
+		</section>
+
+	</div>
+</main>
+
+{{/page}}
