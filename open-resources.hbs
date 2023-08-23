@@ -1,0 +1,38 @@
+{{!< default}}
+
+{{#page}}
+
+<main class="gh-main gh-outer">
+    <div class="gh-inner">
+
+		<section class="custom-hero-block">
+			<div class="custom-hero-block__left">
+				<h1 class="custom-hero-block__title">{{title}}</h1>
+				{{#if custom_excerpt}}
+					<p class="custom-hero-block__description">{{custom_excerpt}}</p>
+				{{else}}
+					<p class="custom-hero-block__description">Our open resources showcase some of our most popular advertising and strategy guides, as well as misinformation alerts. To access all of our resources, sign up here for free.</p>
+				{{/if}}
+				<a href="{{@site.url}}/join-us/" class="custom-hero-block__link">Join Us</a>
+			</div>
+			<div class="custom-hero-block__right">
+				{{#if feature_image}}
+					<img src={{feature_image}} alt="{{title}} image">
+				{{else}}
+					<img src={{asset "assets/images/image00002.png"}} alt="{{title}} image">
+				{{/if}}
+			</div>
+		</section>
+
+		<div class="gh-topic gh-topic-grid">
+            <div class="gh-topic-content gh-feed">
+                {{#foreach posts limit="all"}}
+                    {{> "loop-grid"}}
+                {{/foreach}}
+            </div>
+        </div>
+
+	</div>
+</main>
+
+{{/page}}

@@ -25,38 +25,68 @@
 		</section>
 
 		<section class="m-resources-cards">
-			<h2 class="m-resources-cards__title">GUIDES</h2>
+			<a href="{{@site.url}}/guides/"><h2 class="m-resources-cards__title">GUIDES</h2></a>
 			<div class="tags-cards">
-				{{#get "tags" filter="slug:[advertising, strategic, audience]"}}
-					{{#foreach tags}}
-						<div class="tags-card">
-							{{#if feature_image}}
-								<div class="tags-card__image">
-									<img src="{{feature_image}}" alt="{{name}} tag feature image">
-								</div>
-							{{/if}}
-							<h3 class="tags-card__title">{{name}}</h3>
-						</div>
-					{{/foreach}}
-				{{/get}}
+				<div class="tags-card">
+					<a href="{{@site.url}}/tag/advertising" class="tags-card__image">
+						<img src="{{asset 'assets/images/tag-images/Advertising.png'}}" alt="Advertising tag feature image">
+					</a>
+					<a href="{{@site.url}}/tag/advertising" class="tags-card__title">Advertising</a>
+				</div>
+				<div class="tags-card">
+					<a href="{{@site.url}}/tag/strategic" class="tags-card__image">
+						<img src="{{asset 'assets/images/tag-images/Strategic.png'}}" alt="strategic tag feature image">
+					</a>
+					<a href="{{@site.url}}/tag/strategic" class="tags-card__title">Strategic</a>
+				</div>
+				<div class="tags-card">
+					<a href="{{@site.url}}/tag/audience" class="tags-card__image">
+						<img src="{{asset 'assets/images/tag-images/Audience.png'}}" alt="audience tag feature image">
+					</a>
+					<a href="{{@site.url}}/tag/audience" class="tags-card__title">Audience</a>
+				</div>
 			</div>
 		</section>
 
 		<section class="m-resources-cards">
-			<h2 class="m-resources-cards__title">CLIMATE COMMUNICATION TOPICS</h2>
+			<a href="{{@site.url}}/climate-communications/"><h2 class="m-resources-cards__title">CLIMATE COMMUNICATION TOPICS</h2></a>
 			<div class="tags-cards">
-				{{#get "tags" filter="slug:[culture,energy,food,politics,transport,science]"}}
-					{{#foreach tags}}
-						<div class="tags-card">
-							{{#if feature_image}}
-								<div class="tags-card__image">
-									<img src="{{feature_image}}" alt="{{name}} tag feature image">
-								</div>
-							{{/if}}
-							<h3 class="tags-card__title">{{name}}</h3>
-						</div>
-					{{/foreach}}
-				{{/get}}
+				<div class="tags-card">
+					<a href="{{@site.url}}/tag/culture" class="tags-card__image">
+						<img src="{{asset 'assets/images/tag-images/Culture.png'}}" alt="culture tag feature image">
+					</a>
+					<a href="{{@site.url}}/tag/culture" class="tags-card__title">Culture</a>
+				</div>
+				<div class="tags-card">
+					<a href="{{@site.url}}/tag/energy" class="tags-card__image">
+						<img src="{{asset 'assets/images/tag-images/Energy.png'}}" alt="energy tag feature image">
+					</a>
+					<a href="{{@site.url}}/tag/energy" class="tags-card__title">Energy</a>
+				</div>
+				<div class="tags-card">
+					<a href="{{@site.url}}/tag/food" class="tags-card__image">
+						<img src="{{asset 'assets/images/tag-images/Food.png'}}" alt="food tag feature image">
+					</a>
+					<a href="{{@site.url}}/tag/food" class="tags-card__title">Food</a>
+				</div>
+				<div class="tags-card">
+					<a href="{{@site.url}}/tag/politics" class="tags-card__image">
+						<img src="{{asset 'assets/images/tag-images/Politics.png'}}" alt="politics tag feature image">
+					</a>
+					<a href="{{@site.url}}/tag/politics" class="tags-card__title">Politics</a>
+				</div>
+				<div class="tags-card">
+					<a href="{{@site.url}}/tag/transport" class="tags-card__image">
+						<img src="{{asset 'assets/images/tag-images/Transport.png'}}" alt="transport tag feature image">
+					</a>
+					<a href="{{@site.url}}/tag/transport" class="tags-card__title">Transport</a>
+				</div>
+				<div class="tags-card">
+					<a href="{{@site.url}}/tag/science" class="tags-card__image">
+						<img src="{{asset 'assets/images/tag-images/Science.png'}}" alt="science tag feature image">
+					</a>
+					<a href="{{@site.url}}/tag/science" class="tags-card__title">Science</a>
+				</div>
 			</div>
 		</section>
 
