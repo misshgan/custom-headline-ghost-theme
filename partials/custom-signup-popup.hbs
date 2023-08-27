@@ -1,23 +1,21 @@
-<div class="c-signup-popup-container">
+<div class="c-signup-popup-container disabled">
 	<div class="c-signup-popup">
+		<div class="c-signup-popup__close"><img src="{{asset "assets/images/icon-close.svg"}}" alt="icon close"></div>
 		{{#if @site.logo}}
-			<div class="c-signup-popup__logo">{{@site.logo}}</div>
+			<div class="c-signup-popup__logo"><img src="{{@site.logo}}" alt="{{@site.logo}}"></div>
 		{{/if}}
-		{{#if @site.title}}
-			<h1 class="c-signup-popup__title">{{@site.title}}</h1>
-		{{/if}}
-		<p class="c-signup-popup__description">Visit the <a href="{{@site.url}}/join-us/"></a> page to register for membership.</p>
 		<div class="c-signup-popup__footer">
 			<form data-members-form="signin" class="subscribe-form">
-				<h3>{{t "Welcome back!"}}</h3>
-				<div id="ityped" class="ityped">
-					<span class="ityped-wrap">{{t 'Sign into your account to get to the good stuff'}}</span>
-				</div>
+				<h3 class="subscribe-form__title">{{t "Sign in"}}</h3>
 				<div class="form-group">
-					<input data-members-email class="subscribe-input" placeholder="{{t "Your email address"}}" type="email" aria-label="{{t "Your email address"}}" required>
+					<label class="subscribe-form__label" for="subscribe-form__email">Email</label>
+					<input id="subscribe-form__email" data-members-email class="subscribe-input" placeholder="{{t "Your email address"}}" type="email" aria-label="{{t "Your email address"}}" required>
 				</div>
-				<button type="submit" class="global-button">{{t "Send login link"}}</button>
-				<p data-members-error><!-- error message will appear here --></p>
+				<button type="submit" class="global-button">{{t "Continue"}}</button>
+				<p class="subscribe-form__error" data-members-error></p>
+				<div class="subscribe-form__footer">
+					Don't have an account? <a href="{{@site.url}}/join-us/">Sign up</a>
+				</div>
 			</form>
 		</div>
 	</div>

@@ -12,7 +12,7 @@
 
 <body class="{{body_class}}{{{block "body_class"}}} {{#if @site.description}}is-head-b--a_n{{else}}is-head-b--n--a{{/if}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}{{#is "tag"}}{{#if tag.feature_image}} is-head-transparent{{/if}}{{/is}}{{#is "climate-communications"}}{{#if page.feature_image}} is-head-transparent{{/if}}{{/is}}{{#is "guides"}}{{#if page.feature_image}} is-head-transparent{{/if}}{{/is}}{{#match @custom.header_style "Accent color"}} is-head-brand{{/match}}{{#match @custom.header_style "Dark"}} is-head-dark{{/match}}">
 
-	{{!-- {{> custom-signup-popup}} --}}
+	{{> custom-signup-popup}}
 
     <div class="gh-site">
         <header id="gh-head" class="gh-head gh-outer">
@@ -47,7 +47,7 @@
                     <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
                     {{#if @site.members_enabled}}
                         {{#unless @member}}
-                            <span class="gh-head-btn gh-btn gh-primary-btn">Sign up</span>
+							<span class="header-popup-target gh-head-btn gh-btn gh-primary-btn">Sign in</span>
                         {{else}}
                             <a class="gh-head-btn gh-btn" href="#/portal/account" data-portal="account">Account</a>
                         {{/unless}}
