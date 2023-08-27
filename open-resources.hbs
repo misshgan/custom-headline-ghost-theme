@@ -23,16 +23,15 @@
 				{{/if}}
 			</div>
 		</section>
-
+{{/page}}
 		<div class="gh-topic gh-topic-grid">
             <div class="gh-topic-content gh-feed">
-                {{#foreach posts limit="all"}}
-                    {{> "loop-grid"}}
-                {{/foreach}}
+               {{#foreach posts limit="all"}}
+					{{> "loop-grid"}}
+				{{/foreach}}
             </div>
         </div>
 
 	</div>
 </main>
 
-{{/page}}
