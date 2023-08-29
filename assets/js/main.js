@@ -102,6 +102,11 @@
   
 	const headerDropdownTarget = document.querySelector('.header-dropdown__header');
 	const headerDropdownTargetSecondary = document.querySelectorAll('.header-dropdown__title_first');
+	const headerDropdownBody = document.querySelector('.header-dropdown__body');
+
+	if (document.body.classList.contains('is-head-transparent')) {
+		headerDropdownBody.classList.add('head-transparent')
+	}
   
 	headerDropdownTarget.addEventListener('click', () => {
 	  headerDropdownTarget.classList.toggle('active');
