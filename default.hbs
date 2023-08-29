@@ -14,6 +14,8 @@
 
 	{{> custom-signup-popup}}
 
+	{{> custom-cta-button}}
+
     <div class="gh-site">
         <header id="gh-head" class="gh-head gh-outer">
             <div class="gh-head-inner gh-inner">
@@ -47,7 +49,7 @@
                     <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
                     {{#if @site.members_enabled}}
                         {{#unless @member}}
-							<span class="header-popup-target gh-head-btn gh-btn gh-primary-btn">Sign in</span>
+							<span class="popup-target header-popup-target gh-head-btn gh-btn gh-primary-btn">Sign in</span>
                         {{else}}
                             <a class="gh-head-btn gh-btn" href="#/portal/account" data-portal="account">Account</a>
                         {{/unless}}

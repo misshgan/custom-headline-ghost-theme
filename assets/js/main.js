@@ -145,17 +145,23 @@
   
 
   function handleSignInPopup() {
-    const popupTarget = document.querySelector('.header-popup-target');
+    // const popupTarget = document.querySelector('.header-popup-target');
+	// const popupCtaTarget = document.querySelector('.custom-cta-button');
+
+	const popupTargets = document.querySelectorAll('.popup-target')
     const popupContainer = document.querySelector('.c-signup-popup-container');
     const popupMain = document.querySelector('.c-signup-popup');
 	const popupError = document.querySelector('.subscribe-form__error')
 	const popupInput = document.getElementById('subscribe-form__email');
 
-    if (popupTarget) {
-        popupTarget.addEventListener('click', () => {
-            popupContainer.classList.remove('disabled');
-            document.body.classList.add('no-scroll');
-        });
+    if (popupTargets) {
+        popupTargets.forEach(popupTarget => {
+			popupTarget.addEventListener('click', () => {
+				popupContainer.classList.remove('disabled');
+				document.body.classList.add('no-scroll');
+			});
+		})
+
 
         const popupCloseIcon = document.querySelector('.c-signup-popup__close');
         popupCloseIcon.addEventListener('click', () => {
@@ -169,7 +175,8 @@
             if (
                 !popupMain.contains(event.target) &&
                 !popupContainer.classList.contains('disabled') &&
-                !popupTarget.contains(event.target)
+                !popupTargets[0].contains(event.target) && 
+				!popupTargets[1].contains(event.target)
             ) {
                 popupContainer.classList.add('disabled');
                 document.body.classList.remove('no-scroll');
