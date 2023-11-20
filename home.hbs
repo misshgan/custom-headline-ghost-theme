@@ -6,7 +6,7 @@
 			<div class="custom-hero-block__left">
 				<h1 class="custom-hero-block__title">{{@custom.title_for_first_block_on_the_home_page}}</h1>
 				<p class="custom-hero-block__description">{{@custom.subtitle_for_first_block_on_the_home_page}}</p>
-				<a href="{{@site.url}}/join-us/" class="custom-hero-block__link">Join Us</a>
+				<a href="{{@site.url}}/join-us/" class="custom-hero-block__link">Join Us For Free</a>
 			</div>
 			<div class="custom-hero-block__right">
 				{{#if @custom.image_for_first_block_on_the_home_page}}
@@ -27,7 +27,7 @@
 			</div>
 			<div class="home-custom-block-2__right">
 				<p class="home-custom-block-2__description">{{@custom.text_for_second_block_on_the_home_page}}</p>
-				<a href="{{@site.url}}/about/" class="home-custom-block-2__link">more about us ></a>
+				<a href="{{@site.url}}/about/" class="home-custom-block-2__link">More about us ></a>
 			</div>
 		</section>
 
@@ -55,7 +55,51 @@
             </footer>
         </section> --}}
 
-        {{#if @custom.enter_tag_slugs_for_primary_sections}}
+        <section class="gh-topic gh-topic-grid">
+            <h2 class="gh-topic-name">
+                <a>Latest</a>
+            </h2>
+
+            <div class="gh-topic-content">
+                {{#get "posts" include="tags,authors" limit="1"}}
+                    {{#foreach posts}}
+                        {{> "loop-grid"}}
+                    {{/foreach}}
+                {{/get}}
+            </div>
+        </section>
+
+        {{#get "tags" filter="slug:guides"}}
+            {{#foreach tags}}
+                {{> "topic-grid"}}
+            {{/foreach}}
+        {{/get}}
+
+        {{#get "tags" filter="slug:climate-communications"}}
+            {{#foreach tags}}
+                {{> "topic-grid"}}
+            {{/foreach}}
+        {{/get}}
+
+        {{#get "tags" filter="slug:case-studies"}}
+            {{#foreach tags}}
+                {{> "topic-grid"}}
+            {{/foreach}}
+        {{/get}}
+
+        {{#if @custom.enter_tag_slugs_for_secondary_sections}}
+            {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_secondary_sections}}]"}}
+                {{#if tags}}
+                    <div class="gh-topic-list">
+                        {{#foreach tags}}
+                            {{> "topic-minimal"}}
+                        {{/foreach}}
+                    </div>
+                {{/if}}
+            {{/get}}
+        {{/if}}
+
+        {{!-- {{#if @custom.enter_tag_slugs_for_primary_sections}}
             {{#get "tags" filter="slug:[{{@custom.enter_tag_slugs_for_primary_sections}}]"}}
                 {{#foreach tags}}
                     {{> "topic-grid"}}
@@ -91,6 +135,6 @@
                     {{/if}}
                 {{/get}}
             {{/match}}
-        {{/if}}
+        {{/if}} --}}
     </div>
 </main>

@@ -693,7 +693,7 @@ body:not(.home-template) .gh-topic-grid .gh-card {
 }
 .custom-hero-block__title {
 	margin-bottom: 2.4rem;
-	font-weight: 400;
+	font-weight: 500;
     font-size: 4.8rem;
 }
 .custom-hero-block__description {
@@ -1018,6 +1018,10 @@ body.no-scroll {
 	font-weight: 300;
 
 	margin-left: 0.8rem;
+}
+
+#gh-head .nav a {
+    font-size: 1.8rem;
 }
 
 /* Media queries */

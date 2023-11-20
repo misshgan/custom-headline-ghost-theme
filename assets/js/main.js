@@ -78,7 +78,7 @@
   function handleHeaderDropdown() {
 	const headerDropdownContainer = document.querySelector('.nav-member-resources');
 	const dropdownHTML = `
-	<a class="header-dropdown__header">Member resources <img class="header-dropdown__header-icon" src="${document.body.classList.contains('is-head-transparent') ? '/assets/images/arrow-down_light.svg' : '/assets/images/arrow-down_dark.svg'}" alt="arrow down"></a>
+	<a class="header-dropdown__header">Member Resources <img class="header-dropdown__header-icon" src="${document.body.classList.contains('is-head-transparent') ? '/assets/images/arrow-down_light.svg' : '/assets/images/arrow-down_dark.svg'}" alt="arrow down"></a>
 	<div class="header-dropdown__body">
 		<a href="${window.location.origin}/member-resources/" class="header-dropdown__title_first">Member Resources</a>
 		<a href="${window.location.origin}/guides/" class="header-dropdown__title_first">Guides</a>
@@ -87,7 +87,7 @@
 			<a href="${window.location.origin}/tag/strategic/" class="header-dropdown__title_second">Strategic</a>
 			<a href="${window.location.origin}/tag/audience/" class="header-dropdown__title_second">Audience</a>
 		</div>
-		<a href="${window.location.origin}/climate-communications" class="header-dropdown__title_first">Climate Communications</a>
+		<a href="${window.location.origin}/climate-communications" class="header-dropdown__title_first">Climate Communications Topics</a>
 		<div class="header-dropdown__body_secondary">
 			<a href="${window.location.origin}/tag/culture/" class="header-dropdown__title_second">Culture</a>
 			<a href="${window.location.origin}/tag/energy/" class="header-dropdown__title_second">Energy</a>
